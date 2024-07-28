@@ -6,6 +6,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Moksha Patam
+ * A puzzle created by Zach Blick
+ * for Adventures in Algorithms
+ * at Menlo School in Atherton, CA
+ *
+ * To use this test file, run either the entire thing or individual tests (one at a time).
+ * There are five test cases, each of which will load data from [test number].txt, which is in the
+ * test_files directory.
+ */
+
 public class MokshaPatamTest {
 
     private final MokshaPatam studentSolution = new MokshaPatam();

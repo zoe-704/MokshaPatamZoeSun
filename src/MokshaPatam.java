@@ -1,11 +1,18 @@
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+/**
+ * Moksha Patam
+ * A puzzle created by Zach Blick
+ * for Adventures in Algorithms
+ * at Menlo School in Atherton, CA
+ *
+ * Completed by: [YOUR NAME HERE]
+ *
+ */
 
 public class MokshaPatam {
 
     /**
-     * This represents a typical BFS solution with a O(n) lookup speed for a snake or ladder.
+     * TODO: Complete this function, fewestMoves(), to return the minimum number of moves
+     *  to reach the final square on a board with the given size, ladders, and snakes.
      */
     public static int fewestMoves(int boardsize, int[][] ladders, int[][] snakes) {
 
