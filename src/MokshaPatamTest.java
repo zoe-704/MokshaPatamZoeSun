@@ -27,25 +27,23 @@ public class MokshaPatamTest {
     private int[][] snakes;
 
     @Test
-    @Timeout(value = 1, unit = TimeUnit.SECONDS)
+    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
     public void testBasic() {
         setTestData(0);
     }
 
     @Test
-    @Timeout(value = 1, unit = TimeUnit.SECONDS)
+    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
     public void testTricky() {
         setTestData(4);
     }
 
     @Test
-    @Timeout(value = 1, unit = TimeUnit.SECONDS)
-    public void testLarger() {
-        setTestData(6);
-    }
+    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
+    public void testLarger() {setTestData(6);}
 
     @Test
-    @Timeout(value = 15, unit = TimeUnit.SECONDS)
+    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
     public void testMuchLarger() {
         setTestData(7);
     }
