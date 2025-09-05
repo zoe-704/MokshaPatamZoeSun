@@ -14,19 +14,13 @@ import java.util.*;
 public class MokshaPatam {
     // public static final int dice = 6;
 
-    public static int BFS(int boardsize, int[][] ladders, int[][] snakes) {
+    public static int BFS(int boardsize, int[] jumps) {
         // Board with size 1 wins with 0 moves
         if (boardsize == 1) return 0;
-
-        // Create an array such that jumps[start] = end for each ladder and snake
-        int[] jumps = new int[boardsize + 1];
-        for (int[] l : ladders) jumps[l[0]] = l[1];
-        for (int[] s : snakes) jumps[s[0]] = s[1];
 
         // Prepare BFS
         Queue<int[]> q = new LinkedList<>();
         boolean[] vis = new boolean[boardsize + 1];
-
         q.add(new int[]{1, 0});
         vis[1] = true;
 
@@ -36,6 +30,7 @@ public class MokshaPatam {
             int pos = cur[0], moves = cur[1];
             if (pos == boardsize) return moves;
 
+            // Search path for moving 1-6 squares
             for (int dice = 1; dice <= 6; dice++) {
                 int next = pos + dice;
                 if (next > boardsize) continue;
@@ -48,16 +43,19 @@ public class MokshaPatam {
         }
         return -1;
     }
-    /**
-     * TODO: Complete this function, fewestMoves(), to return the minimum number of moves
-     *  to reach the final square on a board with the given size, ladders, and snakes.
-     */
+
     public static int fewestMoves(int boardsize, int[][] ladders, int[][] snakes) {
 
         /* // Sort in ascending order for starting point of ladder or snake
         Arrays.sort(ladders, (a, b) -> Integer.compare(a[0], b[0]));
         Arrays.sort(snakes, (a, b) -> Integer.compare(a[0], b[0]));*/
 
-        return BFS(boardsize, ladders, snakes);
+        // Create an array such that jumps[start] = end for each ladder and snake
+        int[] jumps = new int[boardsize + 1];
+        for (int[] l : ladders) jumps[l[0]] = l[1];
+        for (int[] s : snakes) jumps[s[0]] = s[1];
+
+        // Run BFS and return shortest path
+        return BFS(boardsize, jumps);
     }
 }
