@@ -21,20 +21,19 @@ public class MokshaPatam {
         // Edge case: board with size 1 wins with 0 moves
         if (boardsize == 1) return 0;
 
-        // Run BFS and return shortest path
-        // Initialize queue and visited array
+        // Initialize queue and visited array for BFS
         Queue<int[]> q = new LinkedList<>();
         boolean[] vis = new boolean[boardsize + 1];
         q.add(new int[]{1, 0});
         vis[1] = true;
 
-        // Track previously traveled squares
+        // Track previously traveled squares to find winning path
         int[] previous = new int[boardsize + 1];
         Arrays.fill(previous, -1);
 
         // BFS implementation
         while (!q.isEmpty()) {
-            // Dequeue first item from queue and store it
+            // Dequeue first item and store it
             int[] cur = q.poll();
             int pos = cur[0], moves = cur[1];
 
