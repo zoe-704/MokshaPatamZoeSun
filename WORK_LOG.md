@@ -5,6 +5,7 @@ Name: Zoe Sun
 | April 3 |   240-3pm   | I tried to understand the problem set during class time. Thought about potentially sorting snakes and ladders 2d arrays for optimizations as well as returning -1 early by checking if the last 6 spots are snakes. Thought about edge cases like if the board is 1, just return 0.                                                       |
 | April 4 | 1030-1040am | Talked to Mr. Blick during tutorial to better understand the problem. Received feedback that sorted lists --> binary search can be an optimization, but I should focus more on HOW to actually solve the problem. Benchmark could be BFS with optimizations including a 2d visited array and array storing min moves to get to each spot. |
 | April 4 |   9-10pm    | A greedy approach could be always moving 6 or to nearest ladder. Could use a dictionary for all the moves, since snakes/ladders are all moves with a starting and ending point. Decided to try to implement BFS first and use an array mapping all moves from starting to ending points. The classic BFS implementation worked.           |
+| April 4 |   4-430pm   | Goal was to write code to print out the sequence of squares in the winning path. In order to do so, create an array to store the previous square to track the winning path. Reverse the path for ascending order of squares.                                                                                                              |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
